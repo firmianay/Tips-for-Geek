@@ -26,6 +26,17 @@ openjdk-8-jre-headless: /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_x
 $ sudo apt install openjdk-11-jre
 ```
 
+## Ubuntu 20.04 VNC
+
+打开远程桌面：
+
+```
+$ sudo apt install vino dconf-editor
+$ dconf write /org/gnome/desktop/remote-access/require-encryption false
+```
+
+然后点击 `settings -> Sharing -> Screen Sharing` 进行设置即可。
+
 ## 开源协议
 
 Vehicle-Security-Toolkit use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
