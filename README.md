@@ -1,6 +1,6 @@
 # Tips-for-Geek
 
-记录工作中遇到的一些小知识小技巧
+记录工作中遇到的一些小知识小技巧。
 
 ## apt-file
 
@@ -47,6 +47,19 @@ $ java -jar bfg.jar --strip-blobs-bigger-than 100M some-big-repo.git
 $ cd some-big-repo.git
 $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
 $ git push
+```
+
+## DEBIAN_FRONTEND 环境变量
+
+DEBIAN_FRONTEND 环境变量告知系统应该从哪儿获得用户输入。如果设置为 `noninteractive`，你就可以直接运行命令，而无需向用户请求输入（所有操作都是非交互式的）。这在运行 apt-get 命令时格外有用，非交互模式会选择默认选项并以最快的速度完成构建。
+
+```sh
+# 使用ARG而不是ENV
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get -qq install {your-package}
+# 或者
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -qq install {your-package}
 ```
 
 ## 开源协议
