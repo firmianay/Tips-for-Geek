@@ -62,6 +62,14 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -qq install {your-package}
 ```
 
+## 路由器抓包
+
+结合使用本机ssh、wireshark和远程tcpdump，路由器抓包竟如此丝滑：
+
+```sh
+$ ssh root@192.168.12.3 "tcpdump -i lo -s 0 -w -" | wireshark -k -i -
+```
+
 ## 开源协议
 
 Vehicle-Security-Toolkit use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
