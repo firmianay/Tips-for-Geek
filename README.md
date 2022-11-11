@@ -72,4 +72,4 @@ $ ssh root@192.168.12.3 "tcpdump -i lo -s 0 -w -" | wireshark -k -i -
 
 ## 开源协议
 
-Vehicle-Security-Toolkit use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
+Tips-for-Geek use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
